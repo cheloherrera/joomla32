@@ -1,0 +1,17 @@
+/**
+* @version   $Id: master-ie10.css 19135 2014-02-26 12:23:04Z arifin $
+* @author    RocketTheme http://www.rockettheme.com
+* @copyright Copyright (C) 2007 - 2012 RocketTheme, LLC
+* @license   http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+*/
+
+/* slideUp and slideDown Animation */
+@keyframes slideUp {
+    0% {
+        transform: translateY(0)
+    }
+
+    100% {
+        transform: translateY(-80px)
+    }
+}

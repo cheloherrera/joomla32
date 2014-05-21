@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<extension client="site" method="upgrade" type="module" version="1.6">
+    <name>RokMiniEvents</name>
+    <author>RocketTheme, LLC</author>
+    <creationDate>November 5, 2013</creationDate>
+    <authorEmail>support@rockettheme.com</authorEmail>
+    <authorUrl>http://www.rockettheme.com</authorUrl>
+    <copyright>(C) 2005 - 2013 RocketTheme, LLC. All rights reserved.</copyright>
+    <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+    <version>2.0.3</version>
+    <description>RokMiniEvents allows to share your Joomla! website Google Calendar Events</description>
+    <files>
+        <folder>admin</folder>
+        <filename>install.script.php</filename>
+        <folder>fields</folder>
+        <folder>language</folder>
+        <filename>index.html</filename>
+        <folder>tmpl</folder>
+        <filename module="mod_rokminievents">mod_rokminievents.php</filename>
+        <folder>lib</folder>
+    </files>
+    <scriptfile>install.script.php</scriptfile>
+    <plugins>
+        <plugin>/lib/RokMiniEventsPlugin.php</plugin>
+    </plugins>
+    <config>
+        <fields name="params">
+            <fieldset addfieldpath="/modules/mod_rokminievents/fields" name="basic">
+                <field type="rokcssfixer"/>
+                <field default="1" description="" label="ROKMINIEVENTS_BUILTINCSS" name="builtin_css" type="radio">
+                    <option value="1">JYes</option>
+                    <option value="0">JNo</option>
+                </field>
+                <field default="1" description="ROKMINIEVENTS_DESC_SETWIDTHS" label="ROKMINIEVENTS_LABEL_SETWIDTHS" name="set_widths" type="radio">
+                    <option value="1">JYes</option>
+                    <option value="0">JNo</option>
+                </field>
+                <field default="750" description="ROKMINEVENTS_DESC_WRAPPERWIDTH" label="ROKMINEVENTS_LABEL_WRAPPERWIDTH" name="wrapper_width" size="7" type="text"/>
+                <field default="3" description="ROKMINEVENTS_DESC_ITEMS" label="ROKMINEVENTS_LABEL_ITEMS" name="item_number" size="7" type="text"/>
+
+                <field description="ROKMINEVENTS_DESC_SOURCES" label="ROKMINEVENTS_LABEL_SOURCES" name="sources" type="rokminieventssources"/>
+
+                <field description="" label="Date Settings" name="spacer_datesettings" type="break"/>
+                <field default="ascending" description="ROKMINEVENTS_DESC_SORTORDER" label="ROKMINEVENTS_LABEL_SORTORDER" name="sortorder" type="list">
+                    <option value="ascending">ROKMINEVENTS_ASCENDING</option>
+                    <option value="descending">ROKMINEVENTS_DESCENDING</option>
+                </field>
+                <field default="predefined_ranges" description="ROKMINEVENTS_DESC_TIMERANGETYPE" label="ROKMINEVENTS_LABEL_TIMERANGETYPE" name="time_range" type="timerange"/>
+                <field class="time_range time_span" description="" label="Time Span" name="spacer_timespan" type="break"/>
+                <field class="time_range time_span" default="" description="ROKMINEVENTS_DESC_STARTINGFROM" label="ROKMINEVENTS_LABEL_STARTINGFROM" name="startmin" type="calendar"/>
+                <field class="time_range time_span" default="" description="ROKMINEVENTS_DESC_ENDINGAT" label="ROKMINEVENTS_LABEL_ENDINGAT" name="startmax" type="calendar"/>
+                <field class="time_range predefined_ranges" description="" label="Predefined Ranges" name="@spacer_predefined_ranges" type="break"/>
+                <field class="time_range predefined_ranges" default="current_month" description="ROKMINEVENTS_DESC_RANGES" label="ROKMINEVENTS_LABEL_RANGES" name="rangespan" type="list">
+                    <option value="next_week">ROKMINEVENTS_RANGE_NEXTWEEK</option>
+                    <option value="next_2_weeks">ROKMINEVENTS_RANGE_NEXT2WEEKS</option>
+                    <option value="next_3_weeks">ROKMINEVENTS_RANGE_NEXT3WEEKS</option>
+                    <option value="current_month">ROKMINEVENTS_RANGE_CURRENTMONTH</option>
+                    <option value="next_2_months">ROKMINEVENTS_RANGE_NEXT2MONTHS</option>
+                    <option value="next_3_months">ROKMINEVENTS_RANGE_NEXT3MONTHS</option>
+                    <option value="current_year">ROKMINEVENTS_RANGE_CURRENTYEAR</option>
+                    <option value="all_events">ROKMINEVENTS_RANGE_ALLEVENTS</option>
+                </field>
+
+                <field description="" label="Display Settings" name="spacer_display_settings" type="break"/>
+                <field default="1" description="ROKMINEVENTS_DESC_SHOWDESC" label="ROKMINEVENTS_LABEL_SHOWDESC" name="show_description" type="list">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field default="a,i,br" description="ROKMINEVENTS_DESC_STRIPTAGS" label="ROKMINEVENTS_LABEL_STRIPTAGS" name="strip_tags" type="text"/>
+                <field default="1" description="ROKMINEVENTS_DESC_TRIMDESC" label="ROKMINEVENTS_LABEL_TRIMDESC" name="trim_description" type="list">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field default="200" description="ROKMINEVENTS_DESC_TRIMCOUNT" label="ROKMINEVENTS_LABEL_TRIMCOUNT" name="trim_count" size="7" type="text"/>
+                <field default="local" description="ROKMINEVENTS_DESC_SHOWLOCALTIMES" label="ROKMINEVENTS_LABEL_SHOWLOCALTIMES" name="localtime" type="list">
+                    <option value="local">ROKMINEVENTS_LOCAL</option>
+                    <option value="server">ROKMINEVENTS_SERVER</option>
+                    <option value="forced">ROKMINEVENTS_SETTIMEZONE</option>
+                </field>
+                <field default="0" description="ROKMINEVENTS_DESC_FORCEDTIMEZONE" label="ROKMINEVENTS_LABEL_FORCEDTIMEZONE" name="timezone" type="timezone"/>
+                <field default="%d" description="ROKMINEVENTS_DESC_DAYFORMAT" label="ROKMINEVENTS_LABEL_DAYFORMAT" name="dayformat" type="dateformats">
+                    <option value="%d">d</option>
+                    <option value="%e">j</option>
+                </field>
+                <field default="%b" description="ROKMINEVENTS_DESC_MONTHFORMAT" label="ROKMINEVENTS_LABEL_MONTHFORMAT" name="monthformat" type="dateformats">
+                    <option value="%b">M</option>
+                    <option value="%B">F</option>
+                    <option value="%m">m</option>
+                </field>
+                <field default="%Y" description="ROKMINEVENTS_DESC_YEARFORMAT" label="ROKMINEVENTS_LABEL_YEARFORMAT" name="yearformat" type="dateformats">
+                    <option value="%Y">Y</option>
+                    <option value="%y">y</option>
+                </field>
+                <field default="%I:%M %p" description="ROKMINEVENTS_DESC_TIMEFORMAT" label="ROKMINEVENTS_LABEL_TIMEFORMAT" name="timeformat" type="dateformats">
+                    <option value="%I:%M %p">h:i a</option>
+                    <option value="%I:%M %P">h:i A</option>
+                    <option value="%I:%M%p">h:ia</option>
+                    <option value="%I:%M%P">h:iA</option>
+                    <option value="%H:%M">H:i</option>
+                    <option value="%X">H:i:s</option>
+                </field>
+                <field default="badge" description="ROKMINEVENTS_DESC_DATEDISPLAY" label="ROKMINEVENTS_LABEL_DATEDISPLAY" name="datedisplay" type="list">
+                    <option value="badge">ROKMINEVENTS_BADGE</option>
+                    <option value="inline">ROKMINEVENTS_INLINE</option>
+                    <option value="both">ROKMINEVENTS_BADGEANDINLINE</option>
+                </field>
+                <field default="0" description="ROKMINEVENTS_DESC_SHOWYEAR" label="ROKMINEVENTS_LABEL_SHOWYEAR" name="showyear" type="list">
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field default="0" description="ROKMINEVENTS_DESC_MAXDISPLAY" label="ROKMINEVENTS_LABEL_MAXDISPLAY" name="limit_count" type="text"/>
+                <field default="3" description="ROKMINEVENTS_DESC_EVENTSLIST" label="ROKMINEVENTS_LABEL_EVENTSLIST" name="events_pane" type="list">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="6">6</option>
+                </field>
+                <field default="arrows" description="ROKMINEVENTS_DESC_TIMELINENAVIGATION" label="ROKMINEVENTS_LABEL_TIMELINENAVIGATION" name="timeline" type="list">
+                    <option value="timeline">ROKMINEVENTS_TIMELINE</option>
+                    <option value="arrows">ROKMINEVENTS_ARROWS</option>
+                    <option value="both">ROKMINEVENTS_TIMELINEANDARROWS</option>
+                </field>
+                <field default="inline" description="ROKMINEVENTS_DESC_TIMELINEDATESDISPLAY" label="ROKMINEVENTS_LABEL_TIMELINEDATESDISPLAY" name="timeline_dates" type="list">
+                    <option value="inline">ROKMINEVENTS_INLINE</option>
+                    <option value="column">ROKMINEVENTS_COLUMN</option>
+                </field>
+
+                <field description="" label="Animation Settings" name="spacer_animation_settings" type="break"/>
+                <field default="Expo.easeInOut" description="ROKMINEVENTS_DESC_TRANSITION" label="ROKMINEVENTS_LABEL_TRANSITION" name="transition" type="list">
+                    <option value="linear">linear</option>
+                    <option value="Quad.easeOut">Quad.easeOut</option>
+                    <option value="Quad.easeIn">Quad.easeIn</option>
+                    <option value="Quad.easeInOut">Quad.easeInOut</option>
+                    <option value="Cubic.easeOut">Cubic.easeOut</option>
+                    <option value="Cubic.easeIn">Cubic.easeIn</option>
+                    <option value="Cubic.easeInOut">Cubic.easeInOut</option>
+                    <option value="Quart.easeOut">Quart.easeOut</option>
+                    <option value="Quart.easeIn">Quart.easeIn</option>
+                    <option value="Quart.easeInOut">Quart.easeInOut</option>
+                    <option value="Quint.easeOut">Quint.easeOut</option>
+                    <option value="Quint.easeIn">Quint.easeIn</option>
+                    <option value="Quint.easeInOut">Quint.easeInOut</option>
+                    <option value="Expo.easeOut">Expo.easeOut</option>
+                    <option value="Expo.easeIn">Expo.easeIn</option>
+                    <option value="Expo.easeInOut">Expo.easeInOut</option>
+                    <option value="Circ.easeOut">Circ.easeOut</option>
+                    <option value="Circ.easeIn">Circ.easeIn</option>
+                    <option value="Circ.easeInOut">Circ.easeInOut</option>
+                    <option value="Sine.easeOut">Sine.easeOut</option>
+                    <option value="Sine.easeIn">Sine.easeIn</option>
+                    <option value="Sine.easeInOut">Sine.easeInOut</option>
+                    <option value="Back.easeOut">Back.easeOut</option>
+                    <option value="Back.easeIn">Back.easeIn</option>
+                    <option value="Back.easeInOut">Back.easeInOut</option>
+                    <option value="Bounce.easeOut">Bounce.easeOut</option>
+                    <option value="Bounce.easeIn">Bounce.easeIn</option>
+                    <option value="Bounce.easeInOut">Bounce.easeInOut</option>
+                    <option value="Elastic.easeOut">Elastic.easeOut</option>
+                    <option value="Elastic.easeIn">Elastic.easeIn</option>
+                    <option value="Elastic.easeInOut">Elastic.easeInOut</option>
+                </field>
+                <field default="500" description="ROKMINEVENTS_DESC_DURATION" label="ROKMINEVENTS_LABEL_DURATION" name="duration" type="text"/>
+                <field default="0" description="ROKMINEVENTS_DESC_OFFSETX" label="ROKMINEVENTS_LABEL_OFFSETX" name="offset_x" type="text"/>
+            </fieldset>
+            <fieldset name="advanced">
+                <field description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" name="moduleclass_sfx" type="text"/>
+
+                <field default="0" name="cache" type="hidden">
+                </field>
+                <field default="1" description="COM_MODULES_FIELD_CACHING_DESC" label="COM_MODULES_FIELD_CACHING_LABEL" name="module_cache" type="list">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+
+                <field default="900" description="COM_MODULES_FIELD_CACHE_TIME_DESC" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" name="cache_time" type="text"/>
+                <field default="static" name="cachemode" type="hidden">
+                    <option value="static"/>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+    <updateservers>
+        <server name="RocketTheme Update Directory" priority="1" type="collection">http://updates.rockettheme.com/joomla/updates.xml</server>
+    </updateservers>
+</extension>

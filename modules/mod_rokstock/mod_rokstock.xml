@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<extension client="site" method="upgrade" type="module" version="2.5">
+    <name>RokStock</name>
+    <author>RocketTheme, LLC</author>
+    <creationDate>November 5, 2013</creationDate>
+    <authorEmail>support@rockettheme.com</authorEmail>
+    <authorUrl>http://www.rockettheme.com</authorUrl>
+    <copyright>(C) 2005 - 2013 RocketTheme, LLC. All rights reserved.</copyright>
+    <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+    <version>2.0.1</version>
+    <description>RokStock is market stock module based on Google data</description>
+    <files>
+        <filename>install.script.php</filename>
+        <filename>rokstock.css</filename>
+        <folder>includes</folder>
+        <folder>images</folder>
+        <folder>language</folder>
+        <filename>index.html</filename>
+        <folder>tmpl</folder>
+        <filename>ajax.php</filename>
+        <filename module="mod_rokstock">mod_rokstock.php</filename>
+        <folder>lib</folder>
+        <filename>helper.php</filename>
+        <filename>RT-LICENSE.php</filename>
+    </files>
+    <scriptfile>install.script.php</scriptfile>
+    <config>
+        <fields name="params">
+            <fieldset addfieldpath="/modules/mod_rokstock/fields" name="basic">
+                <field default=".DJI, .INX, .IXIC" description="Valid stock title. Can be more than one, separated by comma." label="Default Stocks" name="default_stocks" type="text"/>
+                <field default="1" description="Gives to the user the ability to interact with RokStock. Add, remove, reorder. Note: all modifications will be visible to the user only." label="User interaction" name="user_interaction" type="radio">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field default="1" description="Save and restore the status of tickers to cookie" label="Save/restore status" name="store_cookie" type="radio">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field default="30" description="Duration in days for the cookie to be kept" label="Store duration (days)" name="store_time" type="text"/>
+                <field default="1" description="Wether to open ticker links in a new window" label="Open links in new page" name="externals" type="radio">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field default="1" description="Wether to show the main chart" label="Show main chart" name="show_main_chart" type="radio">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field default="0" description="Wether to enable the tooltips details when mouseovering the indexes title" label="Tooltips Details" name="show_tooltips" type="radio">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field default="12" description="Wether to display 12h or 24h time on tooltips time axis." label="Tooltips time axis hours" name="time_display" type="radio">
+                    <option value="12">12h</option>
+                    <option value="24">24h</option>
+                </field>
+            </fieldset>
+            <fieldset name="advanced">
+                <field description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" name="moduleclass_sfx" type="text"/>
+
+                <field default="0" name="cache" type="hidden">
+                </field>
+                <field default="1" description="COM_MODULES_FIELD_CACHING_DESC" label="COM_MODULES_FIELD_CACHING_LABEL" name="module_cache" type="list">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+
+                <field default="900" description="COM_MODULES_FIELD_CACHE_TIME_DESC" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" name="cache_time" type="text"/>
+                <field default="static" name="cachemode" type="hidden">
+                    <option value="static"/>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+    <updateservers>
+        <server name="RocketTheme Update Directory" priority="1" type="collection">http://updates.rockettheme.com/joomla/updates.xml</server>
+    </updateservers>
+</extension>
