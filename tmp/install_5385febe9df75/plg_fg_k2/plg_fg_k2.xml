@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.6" type="plugin" group="feedgator" method="upgrade">
+ <name>FeedGator - K2 Content Plugin</name>
+ <author>Matt Faulds</author>
+ <creationDate>Sept 2010</creationDate>
+ <updatedDate>28 June 2013</updatedDate>
+ <copyright>Copyright 2010 Trafalgar Design</copyright>
+ <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+ <authorEmail>matt@trafalgardesign.com</authorEmail>
+ <authorUrl>http://www.trafalgardesign.com</authorUrl>
+ <version>1.9.3</version>
+ <scriptfile>plg_fg_k2.script.php</scriptfile>
+<description>Plugin to allow importing of content into K2 component. Requires FeedGator 2.4 or later.</description>
+ <files>
+  <filename plugin="plg_fg_k2">plg_fg_k2.php</filename>
+  <filename>plg_fg_k2.install.php</filename>
+  <filename>plg_fg_k2_config.xml</filename>
+  <filename>plg_fg_k2.png</filename>
+ </files>
+ <languages>
+	   <language tag="en-GB">en-GB.plg_fg_k2.ini</language>
+ </languages>
+ <params>
+ </params>
+ <config>
+ </config>
+</install>

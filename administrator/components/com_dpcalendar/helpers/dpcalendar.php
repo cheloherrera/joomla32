@@ -408,7 +408,7 @@ class DPCalendarHelper
 			}
 			$variables['avatar'] = self::getAvatar($author->id, $author->email, $params);
 
-			$variables['capacity'] = $event->capacity == null ? 'unlimited' : $event->capacity;
+			$variables['capacity'] = $event->capacity == null ? JText::_('COM_DPCALENDAR_FIELD_CAPACITY_UNLIMITED') : $event->capacity;
 			$variables['capacityUsed'] = $event->capacity_used;
 			if (isset($event->attendees))
 			{

@@ -15,7 +15,7 @@ class DPCalendarControllerPlugin extends JControllerLegacy
 	public function action ()
 	{
 		$input = JFactory::getApplication()->input;
-		DPCalendarHelper::doPluginAction($input->getWord('plugin'), $input->getWord('action'));
+		DPCalendarHelper::doPluginAction($input->getWord('dpplugin', $input->getWord('plugin')), $input->getWord('action'));
 
 		JFactory::getApplication()->close();
 	}

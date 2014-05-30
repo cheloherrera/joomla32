@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_ATS_VIEW_ASSIGNEDTOME_LABEL">
+		<message>
+				<![CDATA[COM_ATS_VIEW_ASSIGNEDTOME_DESC]]>
+		</message>
+	</layout>
+	<fields name="params">
+		<fieldset name="basic" label="COM_ATS_FIELDSET_BASIC">
+
+		</fieldset>
+		<fieldset name="advanced" label="COM_ATS_FIELDSET_ADVANCED">
+			<field name="show_pagination" type="list" default="1" label="COM_ATS_FIELD_COMMON_PAGINATION_LABEL" description="COM_ATS_FIELD_COMMON_PAGINATION_DESC">
+					<option value="0">JHide</option>
+					<option value="1">JShow</option>
+			</field>
+			<field name="show_pagination_results" type="radio" default="1" label="COM_ATS_FIELD_COMMON_PAGINATION_RESULTS_LABEL" description="COM_ATS_FIELD_COMMON_PAGINATION_RESULTS_DESC">
+					<option value="0">JHide</option>
+					<option value="1">JShow</option>
+			</field>
+		</fieldset>
+	</fields>
+</metadata>

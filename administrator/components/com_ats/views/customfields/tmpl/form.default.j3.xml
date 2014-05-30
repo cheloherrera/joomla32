@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+        cssfiles="media://com_ats/css/backend.css"
+        type="browse"
+        show_header="1"
+        show_filters="1"
+        show_pagination="1"
+        norows_placeholder="COM_ATS_COMMON_NORECORDS"
+        >
+    <headerset>
+        <header name="ordering" type="ordering" sortable="true" tdwidth="20" />
+
+        <header name="ats_customfield_id" type="rowselect" tdwidth="30" />
+
+        <header name="title" type="fieldsearchable" sortable="true" label="COM_ATS_CUSTOMFIELDS_FIELD_TITLE"/>
+
+        <header name="type" type="fieldselectable" sortable="true" label="COM_ATS_CUSTOMFIELDS_FIELD_TYPE" tdwidth="150"
+            source_file="admin://components/com_ats/helpers/select.php" source_class="AtsHelperSelect" source_method="fieldtypesList"
+            source_key="key" source_value="value"
+        />
+
+        <header name="default" type="field" sortable="true" label="COM_ATS_CUSTOMFIELDS_FIELD_DEFAULT" tdwidth="80"/>
+
+        <header name="enabled" type="published" sortable="true" tdwidth="8%" />
+
+    </headerset>
+
+    <fieldset name="items">
+        <field name="ordering" type="ordering" labelclass="order"/>
+
+        <field name="ats_customfield_id" type="selectrow"/>
+
+        <field name="title" type="title"
+            show_link="true"
+            url="index.php?option=com_ats&amp;view=customfield&amp;id=[ITEM:ID]"
+        />
+
+        <field name="type" type="list"
+               source_file="admin://components/com_ats/helpers/select.php" source_class="AtsHelperSelect" source_method="fieldtypesList"
+               source_key="key" source_value="value"
+        />
+
+        <field name="default" type="text" />
+
+        <field name="enabled" type="published"/>
+    </fieldset>
+</form>

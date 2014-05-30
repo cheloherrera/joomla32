@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- last edit 2.4 -->
+<config>
+	<params group="advanced" addpath="/administrator/components/com_feedgator/elements">
+		<param name="base" type="fgbase" default=""  size="50" label="FG_BASE" description="FG_BASE_DESC" />
+		<param name="scrape_type" type="radio" default="cURL" label="FG_SCRAPE_TYPE" description="FG_SCRAPE_TYPE_DESC">
+			<option value="cURL">cURL</option>
+			<option value="fopen">fopen</option>
+		</param>
+		<param name="force_fsockopen" type="radio" default="0" label="FG_FORCE_FSOCK" description="FG_FORCE_FSOCK_DESC">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="img_check" type="radio" default="1" label="FG_IMAGE_CHECK" description="FG_IMAGE_CHECK_DESC">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="blocked_images" type="textarea" default="images.pheedo.com,feeds.feedburner.com,ad.doubleclick.net" label="FG_BLOCK_IMAGES" description="FG_BLOCK_IMAGES_DESC"/>
+		<param name="use_sp_cache" type="radio" default="0" label="FG_SP_CACHE" description="FG_SP_CACHE_DESC">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="set_sp_timeout" type="text" default="" label="FG_SP_TIMEOUT" description="FG_SP_TIMEOUT_DESC" />
+		<param name="debug" type="radio" default="0" label="FG_DEBUG" description="FG_DEBUG_DESC">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="notify_dev" type="radio" default="0" label="FG_NOTIFY_DEV" description="FG_NOTIFY_DEV_DESC">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+	</params>
+
+	<fieldset group="advanced" addpath="/administrator/components/com_feedgator/elements">
+		<field name="base" type="fgbase" default=""  size="50" label="FG_BASE" description="FG_BASE_DESC" />
+		<field name="scrape_type" type="radio" default="cURL" label="FG_SCRAPE_TYPE" description="FG_SCRAPE_TYPE_DESC">
+			<option value="cURL">cURL</option>
+			<option value="fopen">fopen</option>
+		</field>
+		<field name="force_fsockopen" type="radio" default="0" label="FG_FORCE_FSOCK" description="FG_FORCE_FSOCK_DESC">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</field>
+		<field name="img_check" type="radio" default="1" label="FG_IMAGE_CHECK" description="FG_IMAGE_CHECK_DESC">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</field>
+		<field name="blocked_images" type="textarea" default="images.pheedo.com,feeds.feedburner.com,ad.doubleclick.net" label="FG_BLOCK_IMAGES" description="FG_BLOCK_IMAGES_DESC"/>
+		<field name="use_sp_cache" type="radio" default="0" label="FG_SP_CACHE" description="FG_SP_CACHE_DESC">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</field>
+		<field name="set_sp_timeout" type="text" default="" label="FG_SP_TIMEOUT" description="FG_SP_TIMEOUT_DESC" />
+		<field name="debug" type="radio" default="0" label="FG_DEBUG" description="FG_DEBUG_DESC">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</field>
+	</fieldset>
+</config>

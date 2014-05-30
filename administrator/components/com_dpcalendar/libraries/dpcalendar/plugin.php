@@ -277,6 +277,7 @@ abstract class DPCalendarPlugin extends JPlugin
 		$model->setState('filter.state', 1);
 		$model->setState('list.limit', - 1);
 
+		$user = JFactory::getUser();
 		$calendars = array();
 		foreach ($model->getItems() as $calendar)
 		{
@@ -284,15 +285,19 @@ abstract class DPCalendarPlugin extends JPlugin
 			{
 				continue;
 			}
+
 			$cal = $this->createCalendar($calendar->id, $calendar->title, $calendar->description, $calendar->color);
 			$cal->params = $calendar->params;
-			$cal->canCreate = JFactory::getUser()->authorise('core.create', 'com_dpcalendar.extcalendar.' . $calendar->id) &&
-					 $calendar->params->get('action-create', 'false') == 'true';
-			$cal->canEdit = JFactory::getUser()->authorise('core.edit', 'com_dpcalendar.extcalendar.' . $calendar->id) &&
-					 $calendar->params->get('action-edit', 'false') == 'true';
-			$cal->canDelete = JFactory::getUser()->authorise('core.delete', 'com_dpcalendar.extcalendar.' . $calendar->id) &&
-					 $calendar->params->get('action-delete', 'false') == 'true';
 
+			$action = $calendar->params->get('action-create', 'false');
+			$cal->canCreate = $user->authorise('core.create', 'com_dpcalendar.extcalendar.' . $calendar->id) &&
+					 ($action == 'true' || $action === true || $action == 1);
+			$action = $calendar->params->get('action-edit', 'false');
+			$cal->canEdit = $user->authorise('core.edit', 'com_dpcalendar.extcalendar.' . $calendar->id) &&
+					 ($action == 'true' || $action === true || $action == 1);
+			$action = $calendar->params->get('action-delete', 'false');
+			$cal->canDelete = $user->authorise('core.delete', 'com_dpcalendar.extcalendar.' . $calendar->id) &&
+					 ($action == 'true' || $action === true || $action == 1);
 			$calendars[] = $cal;
 		}
 		return $calendars;

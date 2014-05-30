@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
+	<name>com_ats</name>
+	<author>Nicholas K. Dionysopoulos</author>
+	<creationDate>2014-05-06</creationDate>
+	<copyright>Copyright (c)2011-2012 Nicholas K. Dionysopoulos</copyright>
+	<license>This component in released under the GNU/GPL v3 or later license</license>
+	<authorEmail>nicholas@akeebabackup.com</authorEmail>
+	<authorUrl>http://www.akeebabackup.com</authorUrl>
+	<version>1.5.0</version>
+	<description>A very simple ticket support system</description>
+
+	<!-- Public front end files -->
+	<files folder="frontend">
+		<filename>ats.php</filename>
+		<filename>index.html</filename>
+		<filename>dispatcher.php</filename>
+		<filename>router.php</filename>
+
+		<folder>controllers</folder>
+		<folder>helpers</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+	</files>
+
+	<!-- Front end translation files -->
+	<languages folder="language/frontend">
+		<language tag="en-GB">en-GB/en-GB.com_ats.ini</language>
+	</languages>
+
+	<!-- Media files -->
+	<media destination="com_ats" folder="media">
+		<folder>attachments</folder>
+		<folder>css</folder>
+		<folder>groups</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+	</media>
+
+	<!-- Administrator back-end section -->
+	<administration>
+		<!-- Administration menu -->
+		<menu view="cpanel"
+			img="../media/com_ats/images/ats-16.png">COM_ATS</menu>
+
+		<!-- Back-end files -->
+		<files folder="backend">
+			<filename>access.xml</filename>
+			<filename>ats.php</filename>
+			<filename>config.xml</filename>
+			<filename>dispatcher.php</filename>
+			<filename>fof.xml</filename>
+			<filename>index.html</filename>
+			<filename>toolbar.php</filename>
+			<filename>version.php</filename>
+
+			<folder>assets</folder>
+			<folder>controllers</folder>
+			<folder>fields</folder>
+			<folder>fof</folder>
+			<folder>helpers</folder>
+			<folder>models</folder>
+			<folder>sql</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+		</files>
+
+		<!-- Back-end translation files -->
+		<languages folder="language/backend">
+			<language tag="en-GB">en-GB/en-GB.com_ats.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_ats.sys.ini</language>
+		</languages>
+	</administration>
+	
+	<!-- Installation / uninstallation PHP scripts -->
+	<scriptfile>script.ats.php</scriptfile>
+
+    <!-- Update servers -->
+    <updateservers>
+        <server type="extension" priority="1" name="Akeeba Ticket System Professional">http://cdn.akeebabackup.com/updates/atspro.xml</server>
+    </updateservers>
+
+
+    <restorepoint>
+		<customdirs>
+			<dir>plugins/ats/alphauserpoints</dir>
+			<dir>plugins/ats/customfields</dir>
+			<dir>plugins/ats/gravatar</dir>
+			<dir>plugins/ats/postemail</dir>
+			<dir>plugins/ats/sociallike</dir>
+			<dir>plugins/content/atscredits</dir>
+			<dir>plugins/finder/ats</dir>
+			<dir>plugins/search/ats</dir>
+			<dir>plugins/system/atsreplybyemail</dir>
+			<dir>plugins/user/ats</dir>
+		</customdirs>
+		<langfiles>
+			<lang>plg_ats_alphauserpoints</lang>
+			<lang>plg_ats_customfields</lang>
+			<lang>plg_ats_gravatar</lang>
+			<lang>plg_ats_postemail</lang>
+            <lang>plg_ats_sociallike</lang>
+            <lang>plg_content_atscredits</lang>
+			<lang>plg_finder_ats</lang>
+			<lang>plg_search_ats</lang>
+			<lang>plg_search_atsreplybyemail</lang>
+			<lang>plg_user_ats</lang>
+		</langfiles>
+		<skiptables>
+			<table>ats_attachments</table>
+			<table>ats_posts</table>
+			<table>ats_tickets</table>
+		</skiptables>
+	</restorepoint>
+</extension>

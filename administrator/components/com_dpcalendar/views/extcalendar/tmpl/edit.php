@@ -78,7 +78,7 @@ if ($input->getCmd('tmpl') == 'component')
 
 	<?php echo $this->form->getInput('asset_id'); ?>
 	<input type="hidden" name="task" value="" />
-	<input type="hidden" name="plugin" value="<?php echo $input->get('plugin')?>" />
+	<input type="hidden" name="dpplugin" value="<?php echo $input->get('dpplugin')?>" />
 	<input type="hidden" name="tmpl" value="<?php echo $input->get('tmpl')?>" />
 	<?php echo JHtml::_('form.token'); ?>
 </div></form>

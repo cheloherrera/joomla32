@@ -10,7 +10,7 @@
 	</license>
 	<authorEmail>info@digital-peak.com</authorEmail>
 	<authorUrl>joomla.digital-peak.com</authorUrl>
-	<version>4.0.4</version>
+	<version>4.0.6</version>
 	<description>PLG_SEARCH_DPCALENDAR_XML_DESCRIPTION</description>
 	<files>
 		<filename plugin="dpcalendar">dpcalendar.php</filename>

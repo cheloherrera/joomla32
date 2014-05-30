@@ -76,7 +76,7 @@ class DPCalendarModelExtcalendar extends JModelAdmin
 
 	protected function preprocessForm (JForm $form, $data, $group = 'content')
 	{
-		$plugin = JFactory::getApplication()->input->getWord('plugin');
+		$plugin = JFactory::getApplication()->input->getWord('dpplugin');
 
 		JFactory::getLanguage()->load('plg_dpcalendar_dpcalendar_' . $plugin, JPATH_PLUGINS . '/dpcalendar/dpcalendar_' . $plugin);
 		$form->loadFile(JPATH_PLUGINS . '/dpcalendar/dpcalendar_' . $plugin . '/forms/params.xml', false);
@@ -110,7 +110,7 @@ class DPCalendarModelExtcalendar extends JModelAdmin
 		}
 		if (empty($table->plugin))
 		{
-			$table->plugin = JFactory::getApplication()->input->getWord('plugin');
+			$table->plugin = JFactory::getApplication()->input->getWord('dpplugin');
 		}
 
 		if (empty($table->id))

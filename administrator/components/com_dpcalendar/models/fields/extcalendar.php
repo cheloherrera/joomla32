@@ -33,7 +33,7 @@ class JFormFieldExtcalendar extends JFormField
 	});");
 
 		$url = 'index.php?option=com_dpcalendar&view=extcalendars';
-		$url .= '&plugin=' . $this->element['plugin'];
+		$url .= '&dpplugin=' . $this->element['plugin'];
 		$url .= '&import=' . $this->element['import'];
 		$url .= '&tmpl=component';
 		$buffer = '<iframe src="' . JRoute::_($url) . '" style="width:100%; border:0"></iframe>';

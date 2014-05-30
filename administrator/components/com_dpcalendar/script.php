@@ -405,6 +405,29 @@ ADD  `payer_email` VARCHAR( 255 ) NOT NULL;");
 				JFile::delete(JPATH_ADMINISTRATOR . '/components/com_dpcalendar/models/events.php');
 			}
 		}
+		if (version_compare($version, '4.0.5') == - 1)
+		{
+			$db = JFactory::getDBO();
+			$db->setQuery("select * from #__dpcalendar_extcalendars where plugin = 'google' or plugin = 'caldav'");
+
+			foreach ($db->loadObjectList() as $cal)
+			{
+				$params = new JRegistry();
+				$params->loadString($cal->params);
+				$params->set('action-create', true);
+				$params->set('action-edit', true);
+				$params->set('action-delete', true);
+
+				$db->setQuery('update #__dpcalendar_extcalendars set params = ' . $db->q($params->toString()) . ' where id = ' . (int) $cal->id);
+				$db->query();
+			}
+		}
+		if (version_compare($version, '4.0.6') == - 1)
+		{
+			$db = JFactory::getDBO();
+			$db->setQuery('delete from #__dpcalendar_extcalendars where plugin = ' . $db->q('') . ' or plugin is null');
+			$db->query();
+		}
 	}
 
 	public function uninstall ($parent)

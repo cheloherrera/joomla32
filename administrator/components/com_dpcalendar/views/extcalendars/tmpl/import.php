@@ -13,7 +13,7 @@ DPCalendarHelper::loadLibrary(array(
 ));
 JFactory::getDocument()->addScript(JURI::base() . 'components/com_dpcalendar/libraries/iframe-resizer/iframeResizer.contentWindow.min.js');
 
-$plugin = JFactory::getApplication()->input->getCmd('plugin');
+$plugin = JFactory::getApplication()->input->getCmd('dpplugin');
 JFactory::getLanguage()->load('plg_dpcalendar_dpcalendar_' . $plugin, JPATH_PLUGINS . '/dpcalendar/dpcalendar_' . $plugin);
 JForm::addFormPath(JPATH_PLUGINS . '/dpcalendar/dpcalendar_' . $plugin.'/forms');
 $form = JForm::getInstance('form', 'params');

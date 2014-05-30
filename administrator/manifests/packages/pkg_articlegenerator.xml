@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="package" version="3.1.0" method="upgrade">
+	<name>PKG_ARTICLEGENERATOR</name>
+	<packagename>articlegenerator</packagename>
+	<packager>MCTrading</packager>
+	<packagerurl>http://www.suchmaschinen-optimierung-seo.org/</packagerurl>
+	<creationDate>November 2013</creationDate>
+	<author>MCTrading</author>
+	<authorUrl>http://www.suchmaschinen-optimierung-seo.org/</authorUrl>
+	<copyright>Copyright (C) 2013 by MCTrading All rights reserved</copyright>
+	<license>GNU/GPL</license>
+	<!--  The version string is recorded in the components table -->
+	<version>2.2</version>
+	<!-- The description is optional and defaults to the name -->
+	<description>PKG_ARTICLEGENERATOR_DESCRIPTION</description>
+
+	<files folder="packages">
+	<!-- The id for each extension is the element stored in the DB -->
+				<file type="component" id="com_articlegenerator">com_ArticleGenerator22_J32.zip</file>
+				<file type="plugin" id="jcemediabox" group="system">plg_jcemediabox_1110_joomla3.zip</file>
+	</files>
+	<languages>
+				<language tag="en-GB">language/en-GB/en-GB.pkg_articlegenerator.ini</language>
+				<language tag="en-GB">language/en-GB/en-GB.pkg_articlegenerator.sys.ini</language>
+	</languages>
+</extension>
+	

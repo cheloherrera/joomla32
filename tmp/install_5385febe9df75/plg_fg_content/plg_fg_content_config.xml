@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feedgator type="plugin" group="feedgator">
+	<name>FeedGator - Joomla Native Content Plugin</name>
+	<author>Matt Faulds</author>
+	<creationDate>Sept 2010</creationDate>
+	<updatedDate>28 June 2013</updatedDate>
+	<copyright>Copyright 2010 Trafalgar Design</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>matt@trafalgardesign.com</authorEmail>
+	<authorUrl>http://www.trafalgardesign.com</authorUrl>
+	<version>1.9.4</version>
+	<description>Plugin to allow importing of content into native Joomla content. Requires FeedGator 2.4 or later.</description>
+	<params>
+		<param type="spacer" default="FG_PLG_NO_PARAMS"/>
+    </params>
+    <config>
+		<fields name="params" addfieldpath="/plugins/system/plg_sys_feedgator/fields">
+			<fieldset name="basic">
+				<field type="spacer" default="FG_PLG_NO_PARAMS"/>
+			</fieldset>
+		</fields>
+	</config>
+</feedgator>

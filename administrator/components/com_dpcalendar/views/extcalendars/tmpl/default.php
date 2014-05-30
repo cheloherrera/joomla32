@@ -35,7 +35,7 @@ if ($input->getCmd('tmpl') == 'component')
 <?php
 }
 ?>
-<form action="<?php echo JRoute::_('index.php?option=com_dpcalendar&view=extcalendars&plugin=' . $input->getWord('plugin')) . '&tmpl=' . $input->getWord('tmpl'); ?>" method="post" name="adminForm" id="adminForm" class="dp-container">
+<form action="<?php echo JRoute::_('index.php?option=com_dpcalendar&view=extcalendars&dpplugin=' . $input->getWord('dpplugin')) . '&tmpl=' . $input->getWord('tmpl'); ?>" method="post" name="adminForm" id="adminForm" class="dp-container">
 		<table class="table table-striped" id="extcalendarsList">
 			<thead>
 				<tr>
@@ -81,7 +81,7 @@ if ($input->getCmd('tmpl') == 'component')
 					<td class="nowrap">
 						<?php if ($canEdit)
 						{ ?>
-							<a href="<?php echo JRoute::_('index.php?option=com_dpcalendar&task=extcalendar.edit&id=' . (int) $item->id . '&tmpl=' . $input->getWord('tmpl') . '&plugin=' . $input->getWord('plugin')); ?>">
+							<a href="<?php echo JRoute::_('index.php?option=com_dpcalendar&task=extcalendar.edit&id=' . (int) $item->id . '&tmpl=' . $input->getWord('tmpl') . '&dpplugin=' . $input->getWord('dpplugin')); ?>">
 								<?php echo $this->escape($item->title); ?></a>
 						<?php
 						}

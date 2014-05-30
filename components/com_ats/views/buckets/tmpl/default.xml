@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_ATS_VIEW_BUCKETS_LABEL">
+		<message>
+				<![CDATA[COM_ATS_VIEW_BUCKETS_DESC]]>
+		</message>
+	</layout>
+	
+	<fields name="request">
+		<fieldset name="request"
+		 >
+			<field name="category" type="category"
+				description="JGLOBAL_CHOOSE_CATEGORY_DESC"
+				extension="com_ats"
+				label="JGLOBAL_CHOOSE_CATEGORY_LABEL"
+				required="true"
+			/>
+		</fieldset>
+	</fields>	
+	
+	<fields name="params">
+		<fieldset name="basic" label="COM_ATS_FIELDSET_BASIC">
+
+		</fieldset>
+		<fieldset name="advanced" label="COM_ATS_FIELDSET_ADVANCED">
+			<field name="show_pagination" type="list" default="1" label="COM_ATS_FIELD_COMMON_PAGINATION_LABEL" description="COM_ATS_FIELD_COMMON_PAGINATION_DESC">
+					<option value="0">JHide</option>
+					<option value="1">JShow</option>
+			</field>
+			<field name="show_pagination_results" type="radio" default="1" label="COM_ATS_FIELD_COMMON_PAGINATION_RESULTS_LABEL" description="COM_ATS_FIELD_COMMON_PAGINATION_RESULTS_DESC">
+					<option value="0">JHide</option>
+					<option value="1">JShow</option>
+			</field>
+		</fieldset>
+	</fields>
+</metadata>

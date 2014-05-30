@@ -71,7 +71,7 @@ ob_start();
 		</div>
 		<div class="row-fluid" id="dp-event-capacity">
 			<div class="span3 event-label">{{capacityLabel}}: </div>
-			<div class="span9 event-content">{{capacity}} {{attendeesLabel}}</div>
+			<div class="span9 event-content">{{capacity}}</div>
 		</div>
 		<div class="row-fluid">
 			<div class="span3 event-label" id="dp-event-attendee">{{attendeesLabel}}: </div>

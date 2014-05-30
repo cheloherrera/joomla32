@@ -57,7 +57,7 @@ class DPCalendarModelExtcalendars extends JModelList
 		$language = $this->getUserStateFromRequest($this->context . '.filter.language', 'filter_language', '');
 		$this->setState('filter.language', $language);
 
-		$plugin = $this->getUserStateFromRequest($this->context . '.filter.plugin', 'plugin', '');
+		$plugin = $this->getUserStateFromRequest($this->context . '.filter.plugin', 'dpplugin', '');
 		$this->setState('filter.plugin', $plugin);
 
 		// Load the parameters.

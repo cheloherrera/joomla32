@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+  cssfiles="media://com_ats/css/backend.css"
+  type="browse"
+  show_header="1"
+  show_filters="1"
+  show_pagination="1"
+  norows_placeholder="COM_ATS_COMMON_NORECORDS"
+  >
+
+  <headerset>
+    <header name="ordering" type="ordering" sortable="true" tdwidth="8%" />
+    <header name="ats_autoreply_id" type="rowselect" tdwidth="20" />
+    <header name="title" type="fieldsearchable" sortable="true" translate="false"/>
+    <header name="categories" type="fieldsearchable" label="COM_ATS_SUBMENU_CATEGORIES" sortable="false" />
+    <header name="run_after_manager" type="fieldselectable" sortable="true" label="COM_ATS_AUTOREPLIES_RUN_AFTER_MANAGER" tdwidth="8%">
+        <option value="0">COM_ATS_AUTOREPLIES_RUN_AFTER_MANAGER_NO</option>
+        <option value="1">COM_ATS_AUTOREPLIES_RUN_AFTER_MANAGER_YES</option>
+        <option value="2">COM_ATS_AUTOREPLIES_RUN_AFTER_MANAGER_ALWAYS</option>
+    </header>
+    <header name="num_posts" label="COM_ATS_AUTOREPLIES_NUM_POSTS" type="field" sortable="true" tdwidth="8%"/>
+    <header name="min_after" label="COM_ATS_AUTOREPLIES_MIN_AFTER" type="field" sortable="true" tdwidth="8%"/>
+    <header name="keywords" label="COM_ATS_AUTOREPLIES_KEYWORDS" type="field" sortable="false" tdwidth="8%"/>
+    <header name="attachment" label="COM_ATS_TICKETS_HEADING_ATTACHMENT" type="field" sortable="false" tdwidth="8%"/>
+    <header name="enabled" type="published" sortable="true" tdwidth="8%" />
+  </headerset>
+
+  <fieldset name="items">
+    <field name="ordering" type="ordering" labelclass="order"/>
+    <field name="ats_autoreply_id" type="selectrow"/>
+    <field name="title" type="text"
+           show_link="true"
+           url="index.php?option=com_ats&amp;view=autoreply&amp;id=[ITEM:ID]" />
+    <field name="categories" type="atsparsecategories" format="&lt;em&gt;%s&lt;/em&gt;&lt;br/&gt;" />
+    <field name="run_after_manager" type="list">
+        <option value="0">COM_ATS_AUTOREPLIES_RUN_AFTER_MANAGER_NO</option>
+        <option value="1">COM_ATS_AUTOREPLIES_RUN_AFTER_MANAGER_YES</option>
+        <option value="2">COM_ATS_AUTOREPLIES_RUN_AFTER_MANAGER_ALWAYS</option>
+    </field>
+    <field name="num_posts" type="text" />
+    <field name="min_after" type="text" />
+    <field name="keywords" type="atsautoreplieskeywords" />
+    <field name="attachment" type="list">
+      <option value="0">COM_ATS_AUTOREPLIES_NO_ATTACHMENT</option>
+      <option value="1">COM_ATS_AUTOREPLIES_WITH_ATTACHMENT</option>
+      <option value="2">COM_ATS_AUTOREPLIES_ATTACHMENT_ALWAYS</option>
+    </field>
+    <field name="enabled" type="published"/>
+  </fieldset>
+</form>

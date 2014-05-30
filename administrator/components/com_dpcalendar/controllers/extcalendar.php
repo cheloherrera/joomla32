@@ -18,10 +18,10 @@ class DPCalendarControllerExtcalendar extends JControllerForm
 	{
 		$append = parent::getRedirectToItemAppend($recordId, $urlVar);
 
-		$tmp = JFactory::getApplication()->input->get('plugin');
+		$tmp = JFactory::getApplication()->input->get('dpplugin');
 		if ($tmp)
 		{
-			$append .= '&plugin=' . $tmp;
+			$append .= '&dpplugin=' . $tmp;
 		}
 
 		return $append;
@@ -31,10 +31,10 @@ class DPCalendarControllerExtcalendar extends JControllerForm
 	{
 		$append = parent::getRedirectToListAppend();
 
-		$tmp = JFactory::getApplication()->input->get('plugin');
+		$tmp = JFactory::getApplication()->input->get('dpplugin');
 		if ($tmp)
 		{
-			$append .= '&plugin=' . $tmp;
+			$append .= '&dpplugin=' . $tmp;
 		}
 
 		return $append;

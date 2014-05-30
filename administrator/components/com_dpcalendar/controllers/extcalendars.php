@@ -30,7 +30,7 @@ class DPCalendarControllerExtcalendars extends JControllerAdmin
 	public function import ()
 	{
 		$this->setRedirect(
-				'index.php?option=com_dpcalendar&view=extcalendars&layout=import&plugin=' . $this->input->getCmd('plugin') . '&tmpl=' .
+				'index.php?option=com_dpcalendar&view=extcalendars&layout=import&dpplugin=' . $this->input->getCmd('dpplugin') . '&tmpl=' .
 						 $this->input->getCmd('tmpl'));
 		return true;
 	}
@@ -40,10 +40,10 @@ class DPCalendarControllerExtcalendars extends JControllerAdmin
 		$return = parent::delete();
 
 		$redirect = $this->redirect;
-		$tmp = $this->input->get('plugin');
+		$tmp = $this->input->get('dpplugin');
 		if ($tmp)
 		{
-			$redirect .= '&plugin=' . $tmp;
+			$redirect .= '&dpplugin=' . $tmp;
 		}
 		$tmp = $this->input->get('tmpl');
 		if ($tmp)
@@ -59,10 +59,10 @@ class DPCalendarControllerExtcalendars extends JControllerAdmin
 		$return = parent::publish();
 
 		$redirect = $this->redirect;
-		$tmp = $this->input->get('plugin');
+		$tmp = $this->input->get('dpplugin');
 		if ($tmp)
 		{
-			$redirect .= '&plugin=' . $tmp;
+			$redirect .= '&dpplugin=' . $tmp;
 		}
 		$tmp = $this->input->get('tmpl');
 		if ($tmp)

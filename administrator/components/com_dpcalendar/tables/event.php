@@ -186,7 +186,7 @@ class DPCalendarTableEvent extends JTable
 		$isNew = empty($this->id);
 
 		// Attempt to store the user data.
- 		$success = parent::store(true);
+		$success = parent::store(true);
 		if (! $success || empty($this->rrule))
 		{
 			return $success;
@@ -292,7 +292,7 @@ class DPCalendarTableEvent extends JTable
 						$this->_db->qn('modified') . ' = ' . $this->_db->q($date->toSql()),
 						$this->_db->qn('modified_by') . ' = ' . $this->_db->q($user->id),
 						$this->_db->qn('capacity_used') . ' = ' . $this->_db->q($this->capacity_used),
-						$this->_db->qn('capacity') . ' = ' . $this->_db->q($this->capacity),
+						$this->_db->qn('capacity') . ' = ' . ($this->capacity === null ? 'NULL' : $this->_db->q($this->capacity)),
 						$this->_db->qn('plugintype') . ' = ' . $this->_db->q($this->plugintype),
 						$this->_db->qn('params') . ' = ' . $this->_db->q($this->params)
 				);
