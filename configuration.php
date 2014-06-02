@@ -25,7 +25,7 @@ class JConfig {
 	public $ftp_host = '';
 	public $ftp_port = '';
 	public $ftp_user = 'Chelo';
-	public $ftp_pass = 'Selvat1974';
+	public $ftp_pass = '';
 	public $ftp_root = '';
 	public $ftp_enable = '0';
 	public $offset = 'UTC';
