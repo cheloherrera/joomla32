@@ -6,3 +6,4 @@
 #Fields: datetime	priority	category	message
 2014-04-07T16:47:28+00:00	INFO	joomlafailure	Username and password do not match or you do not have an account yet.
 2014-05-21T15:29:58+00:00	INFO	cookiefailure	No se permiten contraseñas vacías
+2014-06-03T12:21:13+00:00	INFO	cookiefailure	No se permiten contraseñas vacías

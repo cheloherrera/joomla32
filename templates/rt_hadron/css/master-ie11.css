@@ -1,0 +1,10 @@
+/**
+* @version   $Id: master-ie11.css 16687 2013-12-09 16:58:20Z arifin $
+* @author    RocketTheme http://www.rockettheme.com
+* @copyright Copyright (C) 2007 - 2012 RocketTheme, LLC
+* @license   http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+*/
+
+/* Menu Block */
+body .menu-block .gf-menu.l1 > li > .item {display: block;height: 32px;padding-top: 12px;}
+body .menu-block .gf-menu.l1 > li > .item.subtext {padding-top: 6px;padding-bottom: 6px;}

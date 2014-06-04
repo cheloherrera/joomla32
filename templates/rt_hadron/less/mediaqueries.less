@@ -1,0 +1,236 @@
+/**
+* @version   $Id: mediaqueries.less 12813 2013-08-16 21:57:09Z arifin $
+* @author    RocketTheme http://www.rockettheme.com
+* @copyright Copyright (C) 2007 - 2014 RocketTheme, LLC
+* @license   http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+*/
+
+// Large Mode
+@media only screen and (min-width: 1200px) {
+	body.layout-mode-responsive {
+		// Responsive Classes
+		.visible-large {
+			display: inherit !important;
+		}
+		.hidden-large {
+			display: none !important;
+		}
+		.visible-desktop {
+			display: inherit !important;
+		}
+		.hidden-desktop {
+			display: none !important;
+		}
+	}
+}
+
+// Desktop Modes
+@media only screen and (min-width: 960px) and (max-width: 1199px) {
+	body.layout-mode-responsive {
+		// Responsive Classes	
+		.visible-large {
+			display: none !important;
+		}
+		.hidden-large {
+			display: inherit !important;
+		}
+		.visible-desktop {
+			display: inherit !important;
+		}
+		.hidden-desktop {
+			display: none !important;
+		} 
+
+		// Heading and Title
+		h1 {font-size: 270%;line-height: 180%;}
+		h2 {font-size: 160%;line-height: 160%;}
+		h3 {font-size: 150%;line-height: 150%;}
+		h4 {font-size: 120%;line-height: 150%;}
+		h5 {font-size: 110%;line-height: 110%;}
+		.item-page h2 {font-size: 160%;line-height: 160%;}
+
+		// Menu
+		.gf-menu.l1 > li {
+			margin-right: 10px;
+			> .item {
+				padding: 0 10px;
+			}
+			&.parent > .item {
+				padding-right: 25px;
+				&:after {
+					right: 10px;
+				}
+			}
+		}		
+	}	
+}
+
+// Tablet Modes
+@media (min-width: 768px) and (max-width: 959px) {
+	body.layout-mode-responsive {
+		// Responsive Classes	
+		.visible-tablet {
+			display: inherit !important;
+		}
+		.hidden-tablet {
+			display: none !important;
+		}
+		.hidden-desktop {
+			display: inherit !important;
+		}
+		.visible-desktop {
+			display: none !important;
+		}
+		.visible-large {
+			display: none !important;
+		}
+		.hidden-large {
+			display: inherit !important;
+		}	
+
+		// Heading and Title
+		h1 {font-size: 250%;line-height: 170%;}
+		h2 {font-size: 140%;line-height: 150%;}
+		h3 {font-size: 130%;line-height: 140%;}
+		h4 {font-size: 110%;line-height: 140%;}
+		h5 {font-size: 105%;line-height: 105%;}
+		.item-page h2 {font-size: 140%;line-height: 150%;}
+
+		// Menu
+		.gf-menu.l1 > li {
+			margin-right: 3px;
+			> .item {
+				padding: 0 3px;
+			}
+			&.parent > .item {
+				padding-right: 20px;
+				&:after {
+					right: 5px;
+				}
+			}
+		}	
+	}
+}
+
+// Mobile Modes
+@media (max-width: 767px) {
+	body.layout-mode-responsive {
+		padding: 0;
+
+		// Responsive Classes
+		.visible-phone {
+			display: inherit !important;
+		}
+		.hidden-phone {
+			display: none !important;
+		}
+		.hidden-desktop {
+			display: inherit !important;
+		}
+		.visible-desktop {
+			display: none !important;
+		}
+		.hidden-large {
+			display: inherit !important;
+		}
+		.visible-large {
+			display: none !important;
+		}
+
+		// Heading and Title
+		h1 {font-size: 240%;line-height: 160%;}
+		h2 {font-size: 130%;line-height: 140%;}
+		h3 {font-size: 120%;line-height: 130%;}
+		h4 {font-size: 105%;line-height: 130%;}
+		h5 {font-size: 100%;line-height: 100%;}
+		.item-page h2 {font-size: 130%;line-height: 130%;}
+
+		// Logo
+		#rt-logo {
+			margin: 18px auto;
+		}
+
+		// Menu
+		.menu-block {
+			float: none;
+			margin: auto;
+		}
+		.dropdown {
+			background: none !important;
+			box-shadow: none !important;
+			border: 0 !important;
+		}		
+		.dropdown-spacer {
+			display: none !important;
+		}
+		.flyout {
+			margin-left: 0 !important;
+		}				
+
+		// Copyright
+		#rt-copyright {
+			text-align: center;
+		}
+
+		// Joomla Core
+		.component-content {
+			.column-1, .column-2, .column-3, .column-4 {
+				width: 100% !important;
+				float: none !important;
+				margin: 0 !important;
+			}
+		}
+
+		// Branding
+		.rt-powered-by {
+			margin: 0 auto;
+		}
+
+		// Extras
+		.gantry-width-20, .gantry-width-25, .gantry-width-30, .gantry-width-33, .gantry-width-40, .gantry-width-50, .gantry-width-60, .gantry-width-66, .gantry-width-70, .gantry-width-75, .gantry-width-80 {
+			width: 100%;
+		}
+		.gantry-width-spacer {
+			margin: 5px;
+		}
+
+		.row {
+			margin: 0;
+			display: block;
+
+			.cell {
+				display: block;
+				width: 100%;
+			}
+		}
+
+		.form-horizontal {
+			.control-group {
+				.control-label {
+					float:none;
+					width: auto;
+					text-align:left;
+				}
+				.controls {
+					margin-left: 0;
+				}
+			}
+		}
+		select {
+			width: 100%;
+		}
+	}	
+}
+
+// Small Screen Mobile Modes
+@media only screen and (max-width: 480px) {
+	body.layout-mode-responsive {
+		// Heading and Title
+		h1 {font-size: 230%;line-height: 150%;}
+		h2 {font-size: 120%;line-height: 130%;}
+		h3 {font-size: 110%;line-height: 120%;}
+		h4 {font-size: 100%;line-height: 120%;}
+		h5 {font-size: 90%;line-height: 100%;}
+		.item-page h2 {font-size: 120%;line-height: 130%;}		
+	}
+}		

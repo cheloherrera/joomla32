@@ -1,0 +1,4 @@
+.gf-menu .item.icon [class^="icon-"], .gf-menu .item.icon [class*=" icon-"] {-webkit-font-smoothing: inherit;}
+* {-webkit-backface-visibility: hidden !important;}
+canvas {height: auto !important;}
+#rt-showcase div.sprocket-features-desc > span {display: block;} 

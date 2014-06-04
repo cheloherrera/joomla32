@@ -1,0 +1,134 @@
+/**
+* @version   $Id: offline.less 12813 2013-08-16 21:57:09Z arifin $
+* @author    RocketTheme http://www.rockettheme.com
+* @copyright Copyright (C) 2007 - 2014 RocketTheme, LLC
+* @license   http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+*/
+
+@import "variables.less";
+@import "/jui/less/mixins.less";
+@import "mixins/index.less";
+
+#system-message-container {
+    position: relative;
+    z-index: 1000;
+}
+.rt-offline-logo {
+	#rt-logo {
+		margin: 0 auto;
+		padding-bottom: 15px;
+	}
+}
+.rt-offline-body {
+	padding: 150px 0;
+}
+.rt-offline-title {
+	margin: 30px 0;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+}
+.rt-offline-message,
+.rt-authorized-login-message {
+	text-align: center;
+	width: 50%;
+	margin: auto;
+}
+
+.rt-subscription-title,
+.rt-authorized-form-title {
+	font-size: 160%;
+	margin-bottom: 25px;
+	text-align: center;
+}
+
+#rt-subscription-form {
+	color: @white;
+	background: darken(@accent-color1, 35%);
+	padding: 80px 0;
+}
+
+#rt-authorized-form {
+	color: @footer-text-color;
+	background: @footer-background;
+	padding: 50px 0;
+}
+
+.rt-offline-form,
+.rt-authorized-login-form {
+    margin: auto;
+    text-align: center;
+    width: 80%;
+	.inputbox {
+		color: @grey;
+		border: 1px solid transparent;
+		#gradient > .horizontal(fadeout(@white, 30%), fadeout(@white, 30%));
+		width: 20%;
+		font-size: 1em;
+		padding: 0 15px;
+		height: 40px;
+		&.rt-secretkey-input {
+			width: 100px;
+		}
+	}
+	.button{
+	    font-size: 1em;
+	    padding: 2px 25px;
+	    height: 42px;
+	}
+}
+
+.rt-secretkey-help {
+	padding: 0 10px;
+	vertical-align: middle;
+}
+
+#rt-form-login {
+	margin: 25px auto;
+}
+
+// Mobile Modes
+@media (max-width: 767px) {
+	body.layout-mode-responsive {
+		.rt-offline-body {
+			padding: 50px 0;
+		}
+		.rt-offline-title {
+			letter-spacing: 5px;
+			width: 80%;
+			margin: auto;
+		}
+		.rt-offline-form,
+		.rt-authorized-login-form {
+			.inputbox, .button {
+				width: 80%;
+			    height: 40px;
+			    margin: auto;
+				display: block;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			.inputbox {
+				margin: 15px auto;
+			}
+			.readon, .button {
+			    padding: 10px 25px;
+			}
+		}
+		#rt-subscription-form {
+			background-position: 50% 150px;
+		}
+	}
+}
+
+// Small Screen Mobile Modes
+@media only screen and (max-width: 480px) {
+	body.layout-mode-responsive {
+		.rt-offline-title {
+			font-size: 1.5em;
+			letter-spacing: 3px;
+			width: 90%;
+			margin: auto;
+		}
+	}
+}

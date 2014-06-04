@@ -1,0 +1,14 @@
+/**
+* @version   $Id: master-ie10.css 17041 2013-12-17 18:36:45Z arifin $
+* @author    RocketTheme http://www.rockettheme.com
+* @copyright Copyright (C) 2007 - 2012 RocketTheme, LLC
+* @license   http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+*/
+
+/* Menu Block */
+body .menu-block .gf-menu.l1 > li > .item {display: block;height: 30px;padding-top: 7px;}
+body .menu-block .gf-menu.l1 > li > .item.subtext {padding-top: 8px;padding-bottom: 4px;}
+body .menu-block .gf-menu .dropdown {filter: none !important;}
+
+/* Demo Stuff */
+body .fp-rokajaxsearch .roksearch-wrapper:before {padding-right: 14px;}
